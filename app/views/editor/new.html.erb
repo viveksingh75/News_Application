@@ -1,0 +1,55 @@
+
+<p id="time">Current time: <%= Time.now %></p>
+<h1 class="admin-pannel">Create News</h1>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Category Input This Type
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Breaking News:-1</li>
+    <li class="list-group-item">Sports:-2</li>
+    <li class="list-group-item">Entertainment:-3</li>
+    <li class="list-group-item">Business:-4</li>
+    <li class="list-group-item">Economics:-5</li>
+    <li class="list-group-item">Current Affairs:-6</li>
+  </ul>
+</div>
+
+
+
+
+<form action="/admin" method="post" accept-charset="UTF-8" >
+
+<label class="alllevel" for="images">Image:</label>
+  <input class="allfield" id="images" name="images" type="file" multiple="true"/><br><br>
+
+  <label class="alllevel" for="video">Video:</label>
+  <input class="allfield" id="video" name="video" type="file" /><br><br>
+
+  <label class="alllevel" for="category_id">Category:</label> <br>
+
+  <input  class="allfield" id="category_id" name="category_id" type="text" /><br><br>
+
+   <label class="alllevel" for="City">City:</label> <br>
+  <input class="allfield" id="City" name="City" type="text" /> <br><br>
+ 
+   <label class="alllevel" for="Author">Author Name:</label> <br>
+  <input class="allfield" id="Author" name="Author" type="text" /><br><br>
+
+   <label class="alllevel" for="Title">Title:</label> <br>
+  <input class="allfield" id="Title" name="Title" type="text" /><br><br>
+
+   <label class="alllevel" for="Short_Discription"> Short_Discription:</label> <br>
+  <input class="allfield" id="Short_Discription" name="Short_Discription" type="text" /><br><br>
+
+   <label class="alllevel" for="Full_Discription">Full_Discription:</label> <br>
+  <input class="allfield" id="Full_Discription" name="Full_Discription" type="text" /><br><br>
+
+  
+
+
+  <input class="submit btn btn-success btn-sm" name="commit" type="submit" value="Create News" data-disable-with="Search" /><br><br>
+</form>
+<button class="btn btn-info btn-sm"> <%= link_to "Back",:back, class:"cr-btn"%> </button>
+

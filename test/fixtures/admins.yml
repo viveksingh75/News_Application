@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  City: MyString
+  Author: MyString
+  Title: MyText
+  Short_Discription: MyText
+  Full_Discription: MyText
+  category: one
+
+two:
+  City: MyString
+  Author: MyString
+  Title: MyText
+  Short_Discription: MyText
+  Full_Discription: MyText
+  category: two

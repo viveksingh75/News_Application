@@ -1,0 +1,80 @@
+<%= render 'sheard/navbar' %>
+<p id="time">Current time: <%= Time.now %></p>
+<h1 class="admin-pannel">Admin Pannel</h1> 
+<button class="create-news"> <%= link_to "Create news", new_admin_path , class:"newscreate"%>  </button>
+
+<table class="table table-bordered" >
+  <thead>
+    <tr class="admin-heading">
+    <th scope="colum">Id</th>
+
+
+      <th scope="colum">
+     
+      <div class="dropdown">
+     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+     CATEGORY
+     </button>
+    <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Breaking News</a></li>
+    <li><a class="dropdown-item" href="#">Sports</a></li>
+    <li><a class="dropdown-item" href="#">Entertainment</a></li>
+    <li><a class="dropdown-item" href="#">Business</a></li>
+    <li><a class="dropdown-item" href="#">Economics</a></li>
+    <li><a class="dropdown-item" href="#">Current Affairs</a></li>
+    </ul>
+    </div>
+      </th>
+      <th scope="colum">CITY</th>
+      <th scope="colum">AUTHOR</th>
+      <th scope="colum">TITLE</th>
+      <th scope="colum">SHORT_DISCRIPTION</th>
+      
+      <th scope="colum">Created_at</th>
+      <th scope="colum">Updated_at</th>
+      <th scope="colum">ShowNews</th>
+      <th scope="colum">EditNews</th>
+      <th scope="colum">DeleteNews</th>
+      
+     
+    </tr>
+  </thead>
+  <tbody>
+  <% @admins.each do |user| %>
+    <tr class="admin-text">
+      <td><%= user.id %></td>
+    
+    
+      <td><%= user.category.name %></td>
+     
+      <td><%= user.City %></td>
+      <td><%= user.Author %></td>
+      <td><%= user.Title %></td>
+      <td><%= user.Short_Discription %></td>
+      <td><% user.Full_Discription%></td>
+      <td><%= user.created_at %></td>
+      <td><%= user.updated_at %></td>
+        <td> <%= link_to "View", admin_path(user),target:'_blank',class:"btn btn-success btn-sm"%> </td> 
+      <td> <%= link_to "Edit", edit_admin_path(user),class:"btn btn-primary btn-sm"%> </td>
+      <td> <%= link_to "Delete", admin_path(user),class:"btn btn-danger btn-sm", data:{
+        turbo_method: :delete,
+        turbo_confirm: "are you sure?",
+      }
+       
+      %></td> 
+     
+
+ 
+    </tr>
+    
+    <% end %>
+  </tbody>
+</table>
+
+ 
+
+
+
+
+
+

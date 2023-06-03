@@ -1,0 +1,68 @@
+<%= render 'sheard/navbar' %>
+<p id="time">Current time: <%= Time.now %></p>
+<h1 class="admin-pannel">Edit News</h1>
+
+
+
+
+<div class="edit-news-section">
+<%= form_with model: @admin do |form| %>
+
+<div >
+   <label class="alllevel" for="images">Image:</label> 
+    <%= form.file_field :images,:multiple=>true, class:"allfield1"  %><br><br>
+  </div>
+  
+  <div >
+    <label class="alllevel" for="video">Video:</label>
+    <%= form.file_field :video,class:"allfield1"  %><br><br>
+  </div>
+  <div>
+  <div>
+
+   <label class="alllevel" for="category_id">Category:</label> <br>
+
+
+
+
+    <%= form.text_field :category_id,class:"allfield1" %><br><br>
+
+
+  </div>
+
+  <div>
+   <label class="alllevel" for="City">City:</label> <br>
+   
+    <%= form.text_field :City,class:"allfield1"  %><br><br>
+  
+  
+  </div>
+  <div >
+   <label class="alllevel" for="Author">Author Name:</label> <br>
+    
+    <%= form.text_field :Author,class:"allfield1" %><br><br>
+    
+  </div>
+  <div >
+     <label class="alllevel" for="Title">Title:</label> <br>
+   
+    <%= form.text_field :Title,class:"allfield1"  %><br><br>
+    
+  </div>
+  <div >
+   <label class="alllevel" for="Short_Discription"> Short_Discription:</label> <br>
+   
+    <%= form.text_field :Short_Discription,class:"allfield1",id:"Short_Discription"  %><br><br>
+  </div>
+ 
+ <div >
+   <label class="alllevel" for="Full_Discription">Full_Discription:</label> <br>
+    
+    <%= form.text_field :Full_Discription,class:"allfield1",id:"Full_Discription" %><br><br>
+  </div>
+  
+   
+   
+<input class="submit btn btn-warning btn-sm" type="submit" name="commit" value="Update Admin" data-disable-with="Update Admin">
+  </div>
+<% end %>

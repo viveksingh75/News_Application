@@ -1,0 +1,68 @@
+<%= render 'sheard/navbar' %>
+<p  id="time" >Current time: <%= Time.now %></p>
+<h1 class="admin-pannel">Show Perticuler news</h1>
+
+
+<table class="table table-bordered" >
+  <thead>
+    <tr class="admin-heading">
+    <th scope="colum">Id</th>
+      <th scope="colum">CATEGORY</th>
+      <th scope="colum">CITY</th>
+      <th scope="colum">AUTHOR</th>
+      <th scope="colum">TITLE</th>
+      <th scope="colum">SHORT_DISCRIPTION</th>
+      <th scope="colum">DISCRIPTION</th>
+      <th scope="colum">created_at</th>
+      <th scope="colum">updated_at</th>
+      <th scope="colum">Show News</th>
+      <th scope="colum">Edit News</th>
+      <th scope="colum">Delete News</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr class="admin-text">
+    <td><%= @admin.id %></td>
+      <td><%= @admin.category.name %></td>
+      <td><%= @admin.City %></td>
+      <td><%= @admin.Author %></td>
+      <td><%= @admin.Title %></td>
+      <td><%= @admin.Short_Discription %></td>
+      <td><%= @admin.Full_Discription %></td>
+      <td><%= @admin.created_at %></td>
+      <td><%= @admin.updated_at %></td>
+         <td> <%= link_to "Show", admin_path(@admin), class:"btn btn-success btn-sm"%> </td>
+      <td> <%= link_to "Edit", edit_admin_path(@admin), class:"btn btn-primary btn-sm"%> </td>
+      <td> <%= link_to "Delete", admin_path(@admin),class:"btn btn-danger btn-sm", data:{
+        turbo_method: :delete,
+        turbo_confirm: "are you sure?",
+      }
+      
+      %> </td>  
+    </tr>
+  </tbody>
+</table>
+ <button class="btn btn-info btn-sm show-perticuler-news" > <%= link_to "Back", :back, class:"cr-btn"%>  </button>
+
+<div class="show-perticuler-news-img">
+
+<h1>Images</h1>
+ <% @admin.images.map do |img|%>
+    <img height="200" width="300"src=<%=(url_for(img))%>>
+<%end%>
+<h1>video<h1>
+
+
+  <video width="400px" height="400px"loop="true" autoplay="true" controls muted src="<%= @admin.video.url %>" ></video>
+  </div>
+
+
+
+
+
+
+
+
+
+

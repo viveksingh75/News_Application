@@ -1,0 +1,47 @@
+  <!-- navbar section start -->
+
+<%= render 'sheard/navbartwo' %>
+    
+
+    <!-- navbar section end -->
+ <div class="page2">
+    <div class="news" id="BreakingNews">
+            <div class="title">
+                <h2>Breaking News</h2>
+            </div>
+           <div class="newsBox">
+           
+
+    <tr>
+   <div class="card mb-3" style="width:100%">
+ <%=@admin.images.map do |img|%>
+    <img height="350rem" width="100%"src=<%=(url_for(img))%>>
+<%end%>
+ 
+  <div class="card-body">
+    <h5 class="card-title"><%= @admin.Title %></h5>
+    
+    <p class="card-text"><%= @admin.Short_Discription %></p>
+
+
+
+    <video width="400px" height="400px"loop="true" autoplay="true" controls muted src="<%= @admin.video.url %>" ></video>
+
+
+<p class="card-text"><%= @admin.Full_Discription %></p>
+    
+
+    <p class="card-text"><small class="text-muted">Current time: <%= Time.now %></small></p>
+ 
+  </div>
+
+  <div class="second-whatsapp">
+<%= link_to whatsapp_share_url('News', "http://127.0.0.1:3000#{home_path(@admin)}"), target: '_blank' do %>
+                    <i class="fa-brands sfa-whatsapp fa-whatsapp"></i>
+                  <% end %>
+</div>
+</div>
+
+
+
+ 

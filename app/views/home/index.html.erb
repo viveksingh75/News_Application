@@ -1,0 +1,313 @@
+<div class="posts">
+  <% @posts.each do |post| %>
+    <!-- Display post information here -->
+    
+        <!-- navbar section start -->
+<%= render 'sheard/navbartwo' %>
+        
+        <!-- navbar section end -->
+        <!-- top head lines ans breaking news section start -->
+        <div class="topHeadlines">
+          <div class="left">
+            <div class="title">
+              <h2>Breaking News</h2>
+            </div>
+            <% @breaking.each do |user| %>
+              <div class="img" id="breakingImg">
+                <a  id="linktag"href="<%= home_path(user) %>">
+                  <%user.images.map do |img|%>
+                    <img height="200" width="300"src=<%=(url_for(img))%>>
+                  <%end%>
+                </div>
+                <div class="text" id="breakingNews">
+                  <h2 class="title">
+                    <%=user.Title%>
+                  </h2>
+                  <div  class="description1">
+                    <%=user.Short_Discription%>
+                  </a><br>
+                  <%= link_to whatsapp_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                    <i class="fa-brands social-media fa-whatsapp"></i>
+                  <% end %>
+                  <%= link_to instagram_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                    <i class="fa-brands social-media fa-instagram"></i>
+                  <% end %>
+                  <%= link_to facebook_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                    <i class="fa-brands social-media fa-facebook"></i>
+                  <% end %>
+                  <%= link_to twitter_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                    <i class="fa-brands social-media fa-twitter"></i>
+                  <% end %>
+                  <%= link_to copy_url("http://127.0.0.1:3000#{home_path(user)}") do %>
+                    <i class="fa-regular social-media fa-copy"></i>
+                  <% end %>
+                  <%break%>
+                <%end%>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="title">
+              <h2>Top Headlines</h2>
+            </div>
+            <div class="topNews">
+              <% @admins.each do |user| %>
+                <a  id="linktag"href="<%= home_path(user) %>">
+                  <div class="card" style="width: 28rem;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <h4 class="card-title"><%= user.Title %></h4>
+                      </li>
+                    </ul>
+                  </div>
+                </a>
+              <%end%>
+            </div>
+          </div>
+        </div>
+        <!-- top head lines and breaking news section end -->
+        <!-- sport, business and technology news section start -->
+        <div class="page2">
+          <div class="news" id="sportsNews">
+            <div class="title">
+              <h2>खेल</h2>
+            </div>
+            <div class="newsBox">
+              <% @sport.each do |user| %>
+                <tr>
+
+
+
+                  <div class="card mb-3" style="width:100%">
+
+                    <a  id="linktag"href="<%= home_path(user) %>">
+                      
+                      <%user.images.map do |img|%>
+                        <img height="350rem" width="100%"src=<%=(url_for(img))%>>
+
+
+                      <%end%>
+
+                      <h1 class="card-title" style="color: #ff8928;"><%= user.Title %></h1>
+                        <div class="card-body">
+
+                        <p class="card-text"><%= user.Short_Discription %></p>
+                         <p class="card-text"><small class="text-muted">Current time: <%= Time.now %></small></p>
+                       
+                      </a><br>
+                      <%= link_to whatsapp_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                        <i class="fa-brands social-media fa-whatsapp"></i>
+                      <% end %>
+                      <%= link_to instagram_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                        <i class="fa-brands social-media fa-instagram"></i>
+                      <% end %>
+                      <%= link_to facebook_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                        <i class="fa-brands social-media fa-facebook"></i>
+                      <% end %>
+                      <%= link_to twitter_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                        <i class="fa-brands social-media fa-twitter"></i>
+                      <% end %>
+                      <%= link_to copy_url("http://127.0.0.1:3000#{home_path(user)}") do %>
+                        <i class="fa-regular social-media fa-copy"></i>
+                      <% end %>
+                    </div>
+                  </div>
+
+
+
+
+                  <br>
+                  <br>
+                <%end%>
+              </div>
+            </div>
+            <div class="news" id="BreakingNews">
+              <div class="title">
+                <h2>सामयिक घटनाएँ</h2>
+              </div>
+              <div class="newsBox">
+                <% @breaking.each do |user| %>
+                  <tr>
+                    <div class="card mb-3" style="width:100%">
+                      <a  id="linktag"href="<%= home_path(user) %>">
+                        
+                        <%user.images.map do |img|%>
+                          <img height="350rem" width="100%"src=<%=(url_for(img))%>>
+                        <%end%>
+
+                        <h1 class="card-title" style="color: #ff414e;"><%= user.Title %></h1>
+                        <div class="card-body">
+                          <p class="card-text"><%= user.Short_Discription %></p>
+                          <p class="card-text"><small class="text-muted">Current time: <%= Time.now %></small></p>
+                        </a><br>
+                        <%= link_to whatsapp_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                          <i class="fa-brands social-media fa-whatsapp"></i>
+                        <% end %>
+                        <%= link_to instagram_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                          <i class="fa-brands social-media fa-instagram"></i>
+                        <% end %>
+                        <%= link_to facebook_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                          <i class="fa-brands social-media fa-facebook"></i>
+                        <% end %>
+                        <%= link_to twitter_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                          <i class="fa-brands social-media fa-twitter"></i>
+                        <% end %>
+                        <%= link_to copy_url("http://127.0.0.1:3000#{home_path(user)}") do %>
+                          <i class="fa-regular social-media fa-copy"></i>
+                        <% end %>
+                      </div>
+                    </div>
+                    <br>
+                    <br>
+                  <%end%>
+                </div>
+              </div>
+              <div class="news" id="EntertainmentNews">
+                <div class="title">
+                  <h2>बॉलीवुड/मनोरंजन</h2>
+                </div>
+                <div class="newsBox">
+                  <% @Entertainment.each do |user| %>
+                    <tr>
+                      <div class="card mb-3" style="width:100%">
+                        <a  id="linktag"href="<%= home_path(user) %>">
+                          
+                          <%user.images.map do |img|%>
+                            <img height="350rem" width="100%"src=<%=(url_for(img))%>>
+                          <%end%>
+
+                          <h1 class="card-title" style="color: #8076a3;"><%= user.Title %></h1>
+                          <div class="card-body">
+                            <p class="card-text"><%= user.Short_Discription %></p>
+                            <p class="card-text"><small class="text-muted">Current time: <%= Time.now %></small></p>
+                          </a>
+                          <br>
+                          <%= link_to whatsapp_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                            <i class="fa-brands social-media fa-whatsapp"></i>
+                          <% end %>
+                          <%= link_to instagram_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                            <i class="fa-brands social-media fa-instagram"></i>
+                          <% end %>
+                          <%= link_to facebook_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                            <i class="fa-brands social-media fa-facebook"></i>
+                          <% end %>
+                          <%= link_to twitter_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                            <i class="fa-brands social-media fa-twitter"></i>
+                          <% end %>
+                          <%= link_to copy_url("http://127.0.0.1:3000#{home_path(user)}") do %>
+                            <i class="fa-regular social-media fa-copy"></i>
+                          <% end %>
+                        </div>
+                      </div>
+                      <br>
+                      <br>
+                    <%end%>
+                  </div>
+                </div>
+                <div class="news" id="businessNews">
+                  <div class="title">
+                    <h2>देश विदेश</h2>
+                  </div>
+                  <div class="newsBox">
+                    <% @Business.each do |user| %>
+                      <tr>
+                        <div class="card mb-3" style="width:100%">
+                          <a  id="linktag"href="<%= home_path(user) %>">
+                            
+                            <%user.images.map do |img|%>
+                              <img height="350rem" width="100%"src=<%=(url_for(img))%>>
+                            <%end%>
+
+                            <h1 class="card-title" style="color: #f75990;"><%= user.Title %></h1>
+                            <div class="card-body">
+                              <p class="card-text"><%= user.Short_Discription %></p>
+                              <p class="card-text"><small class="text-muted">Current time: <%= Time.now %></small></p>
+                            </a>
+                            <br>
+                            <%= link_to whatsapp_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                              <i class="fa-brands social-media fa-whatsapp"></i>
+                            <% end %>
+                            <%= link_to instagram_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                              <i class="fa-brands social-media fa-instagram"></i>
+                            <% end %>
+                            <%= link_to facebook_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                              <i class="fa-brands social-media fa-facebook"></i>
+                            <% end %>
+                            <%= link_to twitter_share_url('News', "http://127.0.0.1:3000#{home_path(user)}"), target: '_blank' do %>
+                              <i class="fa-brands social-media fa-twitter"></i>
+                            <% end %>
+                            <%= link_to copy_url("http://127.0.0.1:3000#{home_path(user)}") do %>
+                              <i class="fa-regular social-media fa-copy"></i>
+                            <% end %>
+                          </div>
+                        </div>
+                        <br>
+                        <br>
+                      <%end%>
+                    </div>
+                  </div>
+                  <!-- sport, business and technology news section end -->
+                  <!-- footer section start -->
+                  <div class="footer">
+                    <div class="box">
+                      <div class="left">
+                        <div class="categories">
+                          <p>Categories</p>
+                          <div>
+                            <p>सामयिक घटनाएँ</p>
+                          </div>
+                          <div>
+                            <p>खेल</p>
+                          </div>
+                          <div>
+                            <p>बॉलीवुड/मनोरंजन</p>
+                          </div>
+                          <div>
+                            <p>देश विदेश</p>
+                          </div>
+                          <%# <div>
+                              <p>Economics</p>
+                            </div>
+                            <div>
+                              <p>Current Affairs</p>
+                            </div> %>
+                        </div>
+                        <div class="contactUs">
+                          <div class="contact">
+                            <p>Contact Us</p>
+                            <div>Phone - <span>7509933819</span></div>
+                            <div>Email - <span>Admin@gmail.com</span></div>
+                            <div>Address - <span>Rewa, India</span></div>
+                          </div>
+                          <div class="icon">
+                            <i class="fa-brands fa-square-facebook"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <a href="https://www.youtube.com/@ProSkillHub_"><i class="fa-brands fa-youtube"></i></a>
+                          </div>
+
+                          <div>
+                          <p class="developer">Designer - Surya Pratap Singh <br> Developer - Vivek Singh & Anshuman Patel</p>
+                          <p><p>
+                          </div>
+                        </div>
+                      </div>
+                      <%# <div class="right">
+                        <div class="newsletter">
+                          <p>Subscribe to Our Newsletter</p>
+                          <div class="email">
+                            <input type="email" placeholder="Enter Your Email Here">
+                            <button>Subscribe</button>
+                            
+                          </div>
+                        </div>
+                      </div> %>
+                    </div>
+                    <!-- footer section end -->
+                    <div class="copyrights">
+                      Copyrights &copy; 2023 Pro Skill Hub
+                    </div>
+                  </div>
+                  <script src="script.js"></script>
+            <% end %>
+          </div>
+          

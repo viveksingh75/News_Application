@@ -1,0 +1,63 @@
+<%= render 'sheard/navbar' %>
+<p id="time">Current time: <%= Time.now %></p>
+<h1 class="admin-pannel">Create News</h1>
+
+<div class="edit-news-section create-news-div">
+    
+<div class="card" style="width: 25rem; background-color: #3c4b64; box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;">
+  <div class="card-header">
+    Category Input This Type
+  </div>
+
+
+  <ul class="list-group list-group-create-news  list-group-flush">
+    <li class="list-group-item">Breaking News:-1</li>
+    <li class="list-group-item">Sports:-2</li>
+    <li class="list-group-item">Entertainment:-3</li>
+    <li class="list-group-item">Business:-4</li>
+    <li class="list-group-item">Economics:-5</li>
+    <li class="list-group-item">Current Affairs:-6</li>
+  </ul>
+</div>
+
+
+
+
+<form action="/admin" method="post" accept-charset="UTF-8" class="list-group-create-news-form">
+<label class="alllevel abc" for="images">Image:</label>
+  <input class="allfield" id="images" name="images" type="file" multiple="true"/>
+
+  <br><br>
+
+  <label class="alllevel" for="video">Video:</label>
+  <input class="allfield" id="video" name="video" type="file" /><br><br>
+
+  <label class="alllevel" for="category_id">Category Name :</label> <br>
+
+  <input  class="allfield" id="category_id" name="category_id" type="text" /><br><br>
+
+   <label class="alllevel" for="City">City:</label> <br>
+  <input class="allfield" id="City" name="City" type="text" /> <br><br>
+ 
+   <label class="alllevel" for="Author">Author Name:</label> <br>
+  <input class="allfield" id="Author" name="Author" type="text" /><br><br>
+
+   <label class="alllevel" for="Title">Title:</label> <br>
+  <input class="allfield" id="Title" name="Title" type="text" /><br><br>
+
+   <label class="alllevel" for="Short_Discription"> Short Discription:</label> <br>
+  <input class="allfield" id="Short_Discription" name="Short_Discription" type="text" /> <br>
+
+   <label class="alllevel" for="Full_Discription">Full Discription:</label> <br>
+  <input class="allfield" id="Full_Discription" name="Full_Discription" type="text" /><br><br>
+
+  
+
+
+  <input class="submit btn btn-success btn-sm" name="commit" type="submit" value="Create News" data-disable-with="Search" />
+
+<button class="btn btn-info btn-sm"> <%= link_to "Back",:back ,class:"cr-btn"%> </button>
+
+</form>
+
+</div>

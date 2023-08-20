@@ -9,6 +9,11 @@
   </div>
 
   <div class="field">
+    <%= f.radio_button :roles,"admin" %>admin
+    <%= f.radio_button :roles,"editor"%>editor
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
